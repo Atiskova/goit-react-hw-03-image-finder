@@ -15,7 +15,7 @@ export class Searchbar extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit({ ...this.state });
+    this.props.onSubmit(this.state.value.toLocaleLowerCase().trim());
     this.setState({ value: '' });
   };
 

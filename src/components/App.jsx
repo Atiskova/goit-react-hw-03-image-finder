@@ -53,8 +53,8 @@ export class App extends React.Component {
     }
   };
 
-  getQuery = ({ value }) => {
-    if (!value.trim() || value === this.state.query) {
+  getQuery = (value) => {
+    if (value === this.state.query) {
       toast('Please, change your request');
       return;
     }
@@ -82,7 +82,6 @@ export class App extends React.Component {
         {!loading && images.length === 0 && !error && (
           <Text>There are no images yet, please make your search 🞁</Text>
         )}
-        {error && toast({error})}
         {!loading && totalImages !== images.length && (
           <Button onClick={this.loadMore} />
         )}
